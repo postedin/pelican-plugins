@@ -249,12 +249,10 @@ class SitemapGenerator(object):
                 # don't add duplicate entry for index page
                 if template_page_url == 'index.html':
                     continue
-
-                template_page_url = template_page_url.replace('/index.html', '')
                     
                 fake = FakePage(status='published',
                                 date=self.now,
-                                url=template_page_url,
+                                url=template_page_url.replace('/index.html', ''),
                                 save_as=template_page_url)
                 self.write_url(fake, fd)
 
