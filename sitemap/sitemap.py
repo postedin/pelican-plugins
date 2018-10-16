@@ -252,7 +252,7 @@ class SitemapGenerator(object):
                     
                 fake = FakePage(status='published',
                                 date=self.now,
-                                url=template_page_url.replace('/index.html', ''),
+                                url=template_page_url.replace('/index.html', '/'),
                                 save_as=template_page_url)
                 self.write_url(fake, fd)
 
