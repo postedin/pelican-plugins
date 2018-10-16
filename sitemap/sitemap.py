@@ -250,6 +250,8 @@ class SitemapGenerator(object):
                 if template_page_url == 'index.html':
                     continue
 
+                template_page_url = template_page_url.replace('/index.html', '')
+                    
                 fake = FakePage(status='published',
                                 date=self.now,
                                 url=template_page_url,
